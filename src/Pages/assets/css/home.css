@@ -1,0 +1,69 @@
+.home-page{
+    margin-bottom: 5rem;
+}
+
+.header{
+    /* position: relative; */
+    margin-bottom: 2rem;
+}
+
+.header-bg{
+    background-image: url('https://portotheme.com/react/porto/demo20/assets/images/demo/slider/home-slide-back.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 33rem;
+    /* position: relative; */
+}
+
+.header-text{
+    position: absolute;
+    top: 8rem;
+    left: 0;
+    padding: 0 1rem;
+    color: var(--text-color);
+    letter-spacing: 0.3rem;
+}
+
+.txt-1{
+    font-size: 1.5rem;
+    margin: 0 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.txt-2{
+    font-size: 3.5rem;
+    margin: 0 !important;
+}
+
+.header-text button{
+    border: none;
+    background-color: var(--text-color);
+    color: var(--primary-color);
+    margin: 2rem 0;
+    padding: 0.5rem 5rem;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+}
+
+@media only screen and (min-width: 768px){
+    .header-bg{
+        min-height: 42rem;
+    }
+
+    .header-text{
+        top: 10rem;
+        padding: 0 6rem;
+    }
+    
+    .txt-2{
+        font-size: 5rem;
+    }
+
+    .header-text button{
+        margin: 2rem 0;
+        padding: 1rem 5rem;
+        font-size: 1.5rem;
+        letter-spacing: 0.15rem;
+    }
+}

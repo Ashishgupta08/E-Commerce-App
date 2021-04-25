@@ -1,0 +1,145 @@
+.product-page{
+    margin-bottom: 3rem;
+}
+
+.product-nav{
+    top: 0;
+    position: sticky;
+    z-index: 10;
+    min-height: 2rem;
+    background-color: var(--off-white);
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search{
+    padding: 0 0.5rem;
+    border: 1px solid var(--light-color);
+}
+
+.search input{
+    border: none !important;
+    border: 1px solid var(--light-color);
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    outline: transparent;
+    background-color: #F5F5F6;
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.icon{
+    width: 1.25rem;
+    height: auto;
+    vertical-align: middle;
+    color: var(--primary-color);
+}
+
+.card {
+    background-color: var(--text-color);
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 50%;
+    justify-content: space-between;
+}
+.card-img{
+    position: relative;
+}
+
+.card-img img{
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.heart-bg {
+    background-color: var(--off-white);
+    border-radius: 50%;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.15rem;
+}
+
+.heart-icon{
+    width: 1.5rem;
+    height: auto;
+    vertical-align: middle;
+    color: var(--light-color);
+}
+
+/* .heart-icon path{
+    color: red;
+    fill: red;
+} */
+
+.card_content {
+    padding: 0.5rem 1rem;
+    color: var(--primary-color);
+    /* background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%); */
+}
+
+.card-heading {
+    margin: 0 !important;
+}
+
+ .card-primary-text {
+    font-size: 1rem;
+    font-weight: 100;
+    margin: 0 !important;
+}
+
+ .card-secondary-text {
+    font-size: 0.8rem;
+    font-weight: 100;
+    color: var(--light-color);
+    margin: 0.5rem 0;
+    margin: 0 !important;
+}
+
+.card-btn {
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+    padding: 0.8rem;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid var(--primary-color);
+    background: transparent;
+}
+
+.card-btn:hover{
+    color: var(--text-color);
+    background-color: var(--primary-color);
+}
+
+/* .card_title {
+    letter-spacing: 1px;
+    margin: 0;
+}
+.card_text {
+    font-size: 0.8rem;
+    margin: 0;
+} */
+
+@media only screen and (min-width: 768px){
+    .product-page{
+        margin-top: 4rem ;
+    }
+
+    .products{
+        width: 33.3333%;
+    }
+}

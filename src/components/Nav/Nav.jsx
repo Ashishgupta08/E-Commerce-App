@@ -2,7 +2,6 @@ import React from 'react'
 import {NavLink} from 'react-router-dom'
 import './assets/nav.css'
 import {AiOutlineHome, AiOutlineHeart, AiOutlineShopping, AiOutlineUser} from "react-icons/ai";
-import {VscHome} from 'react-icons/vsc'
 
 export function Nav() {
     return (

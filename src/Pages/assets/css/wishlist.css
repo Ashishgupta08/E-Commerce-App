@@ -1,63 +1,19 @@
-.product-page{
-    margin-bottom: 3.5rem;
-}
-
-.product-nav{
-    top: 0;
-    position: sticky;
-    z-index: 10;
-    min-height: 2rem;
+.wishlist-nav{
+    padding: 0.5rem 1rem;
     margin-bottom: 0.5rem;
-    background-color: var(--off-white);
     border-bottom: 0.5px solid var(--off-white);
     box-shadow: 2px 0.5px 0px 0px rgb(0 0 0 / 25%);
-    padding: 0.5rem 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
-.search{
-    padding: 0 0.5rem;
-    border: 1px solid var(--light-color);
+.wishlist-nav p{
+    margin: 0;
+    padding: 0;
 }
 
-.search input{
-    border: none !important;
-    border: 1px solid var(--light-color);
-    margin-left: 0.5rem;
-    padding: 0.5rem;
-    outline: transparent;
-    background-color: #F5F5F6;
-}
-
-.filters{
-    padding: 0.5rem;
-    background-color: var(--text-color);
-    color: var(--primary-color);
-    width: 100%;
-    position: fixed;
-    z-index: 10;
-    bottom: 3.5rem;
-}
-
-.close-icon{
-    width: 1.25rem;
-    height: auto;
-    vertical-align: middle;
-    color: var(--primary-color);
-}
-
-.products{
+.wishlist-page{
     display: flex;
     flex-wrap: wrap;
-}
-
-.icon{
-    width: 1.25rem;
-    height: auto;
-    vertical-align: middle;
-    color: var(--primary-color);
+    margin-bottom: 3.5rem;
 }
 
 .card {
@@ -89,22 +45,21 @@
     padding: 0.15rem;
 }
 
-.heart-icon{
+.heart-fill-icon{
     width: 1.5rem;
     height: auto;
     vertical-align: middle;
     color: var(--light-color);
 }
 
-/* .heart-icon path{
-    color: red;
-    fill: red;
-} */
+.heart-fill-icon path{
+    color: var(--red-color);
+    fill: var(--red-color);
+}
 
 .card_content {
     padding: 0.5rem 1rem;
     color: var(--primary-color);
-    /* background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%); */
 }
 
 .card-heading {
@@ -143,23 +98,4 @@
 .card-btn:hover{
     color: var(--text-color);
     background-color: var(--primary-color);
-}
-
-/* .card_title {
-    letter-spacing: 1px;
-    margin: 0;
-}
-.card_text {
-    font-size: 0.8rem;
-    margin: 0;
-} */
-
-@media only screen and (min-width: 768px){
-    .product-page{
-        margin-top: 4rem ;
-    }
-
-    .products{
-        width: 33.3333%;
-    }
 }

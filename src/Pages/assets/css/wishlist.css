@@ -16,7 +16,7 @@
     margin-bottom: 3.5rem;
 }
 
-.card {
+.wish-card {
     background-color: var(--text-color);
     border-radius: 0.25rem;
     box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
@@ -26,53 +26,52 @@
     width: 50%;
     justify-content: space-between;
 }
-.card-img{
+.wish-card-img{
     position: relative;
 }
 
-.card-img img{
+.wish-card-img img{
     width: 100%;
     height: auto;
     vertical-align: middle;
 }
 
-.heart-bg {
-    background-color: var(--off-white);
-    border-radius: 50%;
+.close-bg {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    top: 0.2rem;
+    right: 0.2rem;
     padding: 0.15rem;
 }
 
-.heart-fill-icon{
-    width: 1.5rem;
+.close{
+    width: 2rem;
     height: auto;
     vertical-align: middle;
-    color: var(--light-color);
+    color: var(--primary-color);
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-.heart-fill-icon path{
-    color: var(--red-color);
-    fill: var(--red-color);
+.close path{
+    fill: var(--off-white);
 }
 
-.card_content {
+.wish-card-content {
     padding: 0.5rem 1rem;
     color: var(--primary-color);
 }
 
-.card-heading {
+.wish-card-heading {
     margin: 0 !important;
 }
 
- .card-primary-text {
+ .wish-card-primary-text {
     font-size: 1rem;
     font-weight: 100;
     margin: 0 !important;
 }
 
- .card-secondary-text {
+ .wish-card-secondary-text {
     font-size: 0.8rem;
     font-weight: 100;
     color: var(--light-color);
@@ -80,7 +79,7 @@
     margin: 0 !important;
 }
 
-.card-btn {
+.wish-card-btn {
     color: var(--primary-color);
     margin-top: 0.5rem;
     padding: 0.8rem;
@@ -95,7 +94,35 @@
     background: transparent;
 }
 
-.card-btn:hover{
+.wish-card-btn:hover{
     color: var(--text-color);
     background-color: var(--primary-color);
+}
+
+@media only screen and (min-width: 768px){
+    .wishlist-nav{
+       margin: 4rem 1rem 1rem 1rem;
+    }
+
+    .wishlist-page{
+        margin: 0 2rem;
+        justify-content: space-evenly;
+        /* display: grid;
+        grid-template-columns: 1fr 1fr; */
+    }
+
+    .wish-card{
+        margin: 0.5rem;
+        /* width: max-content; */
+        max-width: 15rem;
+    }
+
+    .wish-card-img{
+        width: max-content;
+    }
+
+    .wish-card-img img{
+        width: auto;
+        height: 20rem;
+    }
 }

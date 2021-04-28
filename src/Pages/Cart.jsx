@@ -1,39 +1,77 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
 import {Nav} from '../components/Nav/Nav'
 import './assets/css/cart.css'
-import { AiOutlineShopping } from "react-icons/ai";
 import { FaPlusSquare, FaMinusSquare } from "react-icons/fa";
+import axios from 'axios';
+import { useWishlist } from "../Contexts/wishlist-context";
+import { useCart } from "../Contexts/cart-context";
 
 export function Cart() {
+
+    const { cart, setCart } = useCart();
+    const { wishlist, setWishlist } = useWishlist();
+
+    const increaseQty = async (product) => {
+        try {
+            const data = await axios.post("https://ecommerce.ashishgupta08.repl.co/cart/update", { productId: product._id, operation: "add" });
+            setCart(cart => cart.map(item => item._id===product._id ? {...item, qty: item.qty + 1} : item));
+        } catch (e) {
+            console.log(e);
+        }
+    };
+
+    const decreaseQty = async (product) => {
+        try{
+            if(product.qty > 1){
+                const data =  await axios.post("https://ecommerce.ashishgupta08.repl.co/cart/update", { productId: product._id, operation: "sub" });
+                setCart(cart => cart.map(item => item._id === product._id ? {...item, qty: item.qty - 1} : item));
+            }else{
+                const data = await axios.post("https://ecommerce.ashishgupta08.repl.co/cart/remove", { productId: product._id });
+                setCart(cart => cart.filter(item => item._id !== product._id ));
+            }
+        }catch(e){
+            console.log(e);
+        }
+    };
+
+    const remove = async (product) => {
+        try{
+            const data = await axios.post("https://ecommerce.ashishgupta08.repl.co/cart/remove", { productId: product._id });
+            setCart(cart => cart.filter(item => item._id !== product._id ));
+        }catch(e){
+            console.log(e);
+        }
+    }
+
     return (
         <>
         <div className="cart-nav">
             <div>
-            <p>Shopping Bag <AiOutlineShopping className="icon" /></p>
-            <p className="card-secondary-text">0 Items</p>
+            <p>Shopping Bag</p>
+            <p className="card-secondary-text">{cart.length} Items</p>
             </div>
         </div>
         <Nav />
         <div className="cart-page">
-            <div className="cart-card">
-                {/* <div className="cart-card-img"> */}
-                    <img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/7575651/2020/5/21/f8645701-aee2-47d8-ab2d-8d82cf4027c71590079966024PumaMenBlueSneakers1.jpg" alt="img" className="cart-card-img" />
-                {/* </div> */}
-                <div className="cart-card-content">
-                    <p className="card-secondary-text">Sneakers</p>
-                    <h4 className="card-heading">Running Blue Shoes</h4>
-                    <p className="card-secondary-text brand">PUMA</p>
-                    <p className="card-primary-text">Rs. 1999</p>
-                    <div className="card-qty">
-                        <p className="qty-name">Qty :</p>
-                        <FaMinusSquare className="cart-icon" />
-                        <p className="qty">5</p>
-                        <FaPlusSquare className="cart-icon" />
+            {cart.map(item => 
+                <div key={item._id} className="cart-card">
+                    <img src={item.imgUrl} alt="img" className="cart-card-img" />
+                    <div className="cart-card-content">
+                        <p className="card-secondary-text">{item.type}</p>
+                        <h4 className="card-heading">{item.name}</h4>
+                        <p className="card-secondary-text brand">{item.brand}</p>
+                        <p className="card-primary-text">Rs. {item.price.selling}</p>
+                        <div className="card-qty">
+                            <p className="qty-name">Qty :</p>
+                            <FaMinusSquare className="cart-icon" onClick={()=>{decreaseQty(item)}} />
+                            <p className="qty">{item.qty}</p>
+                            <FaPlusSquare className="cart-icon" onClick={()=>{increaseQty(item)}} />
+                        </div>
+                        <button className="cart-btn" onClick={()=>{remove(item)}}>Remove</button>
                     </div>
-                    <button className="cart-btn">Remove</button>
-                    {/* <button className="cart-card-btn move-btn">Move to Wishlist</button> */}
                 </div>
-            </div>
+            )}
         </div>
         </>
     )

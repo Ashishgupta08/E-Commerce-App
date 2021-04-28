@@ -8,7 +8,7 @@ export function Nav() {
         <>
         <nav className="nav">
             <div className="nav-header">
-                <h1>MYNTRA</h1>
+                <h1>100 STEPS</h1>
             </div>
             <div className="nav-links">
                 <ul>

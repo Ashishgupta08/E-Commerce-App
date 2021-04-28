@@ -7,7 +7,7 @@ export function WishlistProvider({ children }){
     const [wishlist, setWishlist] = useState([])
 
     return(
-        <WishlistContext.Provider value={{wishlist, setWishlist}}>
+        <WishlistContext.Provider value={{ wishlist, setWishlist }}>
             {children}
         </WishlistContext.Provider>
     )

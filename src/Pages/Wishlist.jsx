@@ -11,6 +11,17 @@ export function Wishlist() {
     const { setCart } = useCart();
     const { wishlist, setWishlist } = useWishlist();
 
+    if(wishlist.length === 0){
+      (async function(){
+          try{
+              const { data: { wishlist } } = await axios.get("https://ecommerce.ashishgupta08.repl.co/wishlist");
+              setWishlist(wishlist);
+          }catch(e){
+              console.log(e);
+          }
+      })();
+  }
+
     const updateWishlist = async (product) => {
       try {
         console.log(product);

@@ -12,6 +12,17 @@ export function Cart() {
     const { cart, setCart } = useCart();
     const { wishlist, setWishlist } = useWishlist();
 
+    if(cart.length === 0){
+        (async function(){
+            try{
+                const { data: { cart } } = await axios.get("https://ecommerce.ashishgupta08.repl.co/cart");
+                setCart(cart);
+            }catch(e){
+                console.log(e);
+            }
+        })();
+    }
+    
     const increaseQty = async (product) => {
         try {
             const data = await axios.post("https://ecommerce.ashishgupta08.repl.co/cart/update", { productId: product._id, operation: "add" });

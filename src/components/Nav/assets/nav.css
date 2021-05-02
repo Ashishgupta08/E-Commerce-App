@@ -12,6 +12,16 @@
     color: var(--text-color);
 }
 
+.nav-mobile{
+    height: 3.5rem;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    top: 0;
+}
+
 .nav-header{
     display: none;
 }
@@ -57,6 +67,10 @@
 @media only screen and (min-width: 768px){
     .nav-text{
         display: none !important;
+    }
+
+    .nav-mobile{
+        display: none;
     }
 
     .nav{

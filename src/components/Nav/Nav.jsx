@@ -10,6 +10,9 @@ export function Nav() {
             <div className="nav-header">
                 <h1>100 STEPS</h1>
             </div>
+            <div className="nav-mobile">
+                <h1>100 STEPS</h1>
+            </div>
             <div className="nav-links">
                 <ul>
                     <li><NavLink to='/' className="link">

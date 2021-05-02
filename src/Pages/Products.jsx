@@ -2,14 +2,14 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState, useReducer } from "react";
 import './assets/css/product.css'
-import { Nav } from '../components/Nav/Nav'
+import {ProductCard, Nav } from '../components/index'
 import { FaSlidersH } from "react-icons/fa";
 import { BiSearch } from "react-icons/bi";
-import { IoHeartOutline } from "react-icons/io5";
 import { VscClose } from "react-icons/vsc";
 import LoadingScreen from "react-loading-screen";
 import { useCart } from "../Contexts/cart-context";
 import { useWishlist } from "../Contexts/wishlist-context";
+import { IoHeartOutline } from "react-icons/io5";
 
 export function Products() {
 
@@ -41,27 +41,6 @@ export function Products() {
       }
   }
 
-  const addToWishlist = (product) => {
-    (async function(){
-      try {
-        const { data: { result } } = await axios.post("https://ecommerce.ashishgupta08.repl.co/wishlist", {newWishlist: [product._id]});
-        setWishlist(wishlist => [...wishlist, product]);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
-  };
-
-  const addToCart = async (product) => {
-    try {
-      console.log(product);
-      const data = await axios.post("https://ecommerce.ashishgupta08.repl.co/cart", { newCartItemId: product._id });
-      setCart(cart => [...cart, { ...product, qty: 1 }]);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
   useEffect(() => {
 
     (async function () {
@@ -84,10 +63,6 @@ export function Products() {
     })();
   }, []);
 
-  const [filter, setFilter] = useState("none")
-  const opneFilters = () => {setFilter("block")};
-  const closeFilters = () => {setFilter("none")};
-
   return (
     <>
     <LoadingScreen
@@ -99,21 +74,21 @@ export function Products() {
           text="Loading.... Please Wait!"
     >
     </LoadingScreen>
-    <div className="product-nav">
+    {/* <div className="product-nav">
       <div><FaSlidersH className="icon" onClick={()=>{opneFilters()}} /></div>
       <div className="search">
         <BiSearch className="icon" />
         <input type="text" placeholder="Search for products" />
       </div>
-    </div>
-    <div className="filters" style={{display: filter}}>
-      <VscClose className="close-icon" onClick={()=>{closeFilters()}}/>
+    </div> */}
+    <div className="filters">
+      {/* <VscClose className="close-icon" /> */}
       <div>
         <p>Sort By Price</p>
         <label><input type="radio" name="price" onClick={()=>dispatch({type: "LOWTOHIGH"})} />Low to High</label>
         <label><input type="radio" name="price" onClick={()=>dispatch({type: "HIGHTOLOW"})} />High to Low</label>
       </div>
-      <div>
+      {/* <div>
         <p>Filters</p>
         <fieldset>
           <legend>Colors</legend>
@@ -126,23 +101,12 @@ export function Products() {
           <label><input type="checkbox" name="type" onChange={()=>dispatch({payload: "TYPE", type: "SPORTS"})} />Sports</label>
           <label><input type="checkbox" name="type" onChange={()=>dispatch({payload: "TYPE", type: "SNEAKERS"})} />Sneakers</label>
         </fieldset>
-      </div>
+      </div> */}
     </div>
     <Nav />
     <div className="product-page">
         {products.productsList.map(product=>
-          <div key={product._id} className="card">
-            <div className="card-img">
-              <img src={product.imgUrl} alt="img"/>
-              <div className="heart-bg"><IoHeartOutline className="heart-icon" onClick={()=>{addToWishlist(product)}} /></div>
-            </div>
-            <div className="card-content">
-              <p className="card-secondary-text">{product.type}</p>
-              <h4 className="card-heading">{product.name}</h4>
-              <p className="card-primary-text">Rs. {product.price.selling}</p>
-            </div>
-            <button className="card-btn" onClick={()=>{addToCart(product)}} >Add to Bag</button>
-          </div>
+          <ProductCard  product={product}/>
         )}
     </div>
     </>

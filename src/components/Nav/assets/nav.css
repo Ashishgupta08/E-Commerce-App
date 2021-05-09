@@ -26,8 +26,8 @@
     display: none;
 }
 
-.nav-links{
-    /* margin-top: 2rem; */
+.nav-links ul li a:active, a:hover{
+    border-bottom: 2px solid var(--text-color);
 }
 
 .nav ul{
@@ -63,6 +63,7 @@
     height: auto;
     color: var(--text-color);
 }
+
 
 @media only screen and (min-width: 768px){
     .nav-text{

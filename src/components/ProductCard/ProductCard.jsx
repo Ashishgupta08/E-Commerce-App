@@ -2,7 +2,7 @@ import React from 'react'
 import axios from "axios";
 import { useState } from "react";
 import { IoHeartOutline } from "react-icons/io5";
-import { useWishlist } from "../../Contexts/wishlist-context";
+import { useWishlist } from "../../Contexts/index";
 import { useNavigate } from "react-router-dom";
 
 export function ProductCard(props) {
@@ -29,14 +29,14 @@ export function ProductCard(props) {
     };
 
     return (
-        <div key={product._id} className="card" onClick={() => navigate(`/view/${product._id}`)}>
+        <div key={product._id} className="card" >
             <div className="card-img">
                 <img src={product.imgUrl} alt="img"/>
                 <div className="heart-bg">
                     <IoHeartOutline className={like} onClick={()=>{addToWishlist(product)}} />
                 </div>
             </div>
-            <div className="card-content">
+            <div className="card-content" onClick={() => navigate(`/view/${product._id}`)}>
                 <p className="card-secondary-text">{product.type}</p>
                 <h4 className="card-heading">{product.name}</h4>
                 <p className="card-primary-text">Rs. {product.price.selling}</p>

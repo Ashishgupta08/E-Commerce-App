@@ -46,6 +46,10 @@
     letter-spacing: 0.15rem;
 }
 
+.header-text button:hover{
+    cursor: pointer;
+}
+
 @media only screen and (min-width: 768px){
     .header-bg{
         min-height: 42rem;

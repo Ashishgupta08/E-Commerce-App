@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {BrowserRouter as Router} from 'react-router-dom';
-import { WishlistProvider } from './Contexts/wishlist-context';
-import { CartProvider } from './Contexts/cart-context';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { CartProvider, WishlistProvider } from "./Contexts/index";
 
 ReactDOM.render(
   <React.StrictMode>

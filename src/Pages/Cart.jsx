@@ -1,16 +1,13 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
 import {Nav} from '../components/Nav/Nav'
 import './assets/css/cart.css'
 import { FaPlusSquare, FaMinusSquare } from "react-icons/fa";
 import axios from 'axios';
-import { useWishlist } from "../Contexts/wishlist-context";
-import { useCart } from "../Contexts/cart-context";
+import { useWishlist, useCart } from "../Contexts/index";
 
 export function Cart() {
 
     const { cart, setCart } = useCart();
-    const { wishlist, setWishlist } = useWishlist();
 
     if(cart.length === 0){
         (async function(){

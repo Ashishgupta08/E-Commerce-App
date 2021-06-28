@@ -3,17 +3,15 @@
 }
 
 .header{
-    /* position: relative; */
     margin-bottom: 2rem;
 }
 
 .header-bg{
-    background-image: url('https://portotheme.com/react/porto/demo20/assets/images/demo/slider/home-slide-back.jpg');
+    background-image: url('https://rubiktheme.com/demo/rb_azeno_demo/modules/rbthemeslider/uploads/slider6-1.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 33rem;
-    /* position: relative; */
+    min-height: 40rem;
 }
 
 .header-text{
@@ -50,6 +48,119 @@
     cursor: pointer;
 }
 
+.gender-category-cards{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.card{
+    border: 0px solid rgb(133, 129, 129)33, 129, 129;
+    min-height: 25rem;
+    min-width: 100%;
+    margin-bottom: 00.5rem;
+    position: relative;
+}
+
+.men{
+    background-image: url('https://rubiktheme.com/demo/rb_azeno_demo//img/cms/img4-3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.women{
+    background-image: url('https://rubiktheme.com/demo/rb_azeno_demo//img/cms/img4-4.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gender-category-card-text{
+    position: absolute;
+    left: 0;
+    bottom: 10rem;
+}
+
+.gender-category-card-text h2{
+    margin: 1rem 0;
+    font-size: 2rem;
+    letter-spacing: 00.15rem;
+    line-height: 2rem;
+}
+
+.gender-category-card-text button{
+    border: 2px solid var(--dark-color);
+    background-color: transparent;
+    font-weight: bold;
+    color: var(--dark-color);
+    vertical-align: middle;
+    cursor: pointer;
+    padding: 1rem 0.5rem;
+}
+
+.arrow{
+    margin-left: 00.5rem;
+    height: auto;
+    width: auto;
+    vertical-align: middle;
+}
+
+.category-section{
+    display: flex;
+    flex-direction: column;
+}
+
+.category-header h1, h3{
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.category-header{
+    text-align: center;
+    margin: 3rem auto 0.5rem auto;
+}
+
+.category-header>h1{
+    border-bottom: 3px solid var(--light-color);
+    font-weight: 400;
+    line-height: 3rem;
+    font-size: 3rem;
+    letter-spacing: 00.25rem;
+}
+
+.category-header>h3{
+    font-weight: 400;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    letter-spacing: 00.05rem;
+}
+
+.category-options{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    cursor: pointer;
+}
+
+.category-img{
+    border-radius: 50%;
+    height: 12.5rem;
+    width: 12.5rem;
+    margin: 00.5rem;
+    object-fit: fill;
+}
+
+.img-container{
+    text-align: center;
+}
+
+.category-text{
+    color: var(--dark-color);
+    white-space: nowrap;
+}
+
 @media only screen and (min-width: 768px){
     .header-bg{
         min-height: 42rem;
@@ -70,4 +181,47 @@
         font-size: 1.5rem;
         letter-spacing: 0.15rem;
     }
+
+    .gender-category-cards{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .card{
+        border: 0px solid rgb(133, 129, 129)33, 129, 129;
+        min-height: 32rem;
+        min-width: 48%;
+    }
+
+    .gender-category-card-text{
+        position: absolute;
+        left: 3rem;
+        bottom: 10rem;
+    }
+
+    .gender-category-card-text h2{
+        font-size: 2.5rem;
+        letter-spacing: 00.25rem;
+    }
+    
+    .gender-category-card-text button{
+        letter-spacing: 00.15rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .gender-category-card-text button:hover{
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        border-color: var(--text-color);
+    }
+
+    .category-options{
+        margin: 0 0.5rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
 }

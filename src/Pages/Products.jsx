@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState, useReducer } from "react";
-import './assets/css/product.css'
-import {ProductCard, Nav } from '../components/index'
+import './assets/css/product.css';
+import {ProductCard, Nav } from '../components/index';
 import LoadingScreen from "react-loading-screen";
 import { useCart } from "../Contexts/cart-context";
 import { useWishlist } from "../Contexts/wishlist-context";
@@ -17,11 +17,11 @@ export function Products() {
   function reducer(state,action){
       switch (action.type) {
         case "LOAD":
-          return {productsList: action.payload}
+          return { ...state, productsList: action.payload }
         case "LOW_TO_HIGH":
-          return {productsList: state.productsList.sort((a,b)=>a.price.selling - b.price.selling)}
+          return { ...state, productsList: state.productsList.sort((a,b)=>a.price.selling - b.price.selling) }
         case "HIGH_TO_LOW":
-          return {productsList: state.productsList.sort((a,b)=>b.price.selling - a.price.selling)}    
+          return { ...state, productsList: state.productsList.sort((a,b)=>b.price.selling - a.price.selling) }    
         default:
           return state
       }
@@ -39,7 +39,7 @@ export function Products() {
           data: { wishlist }
         } = await axios.get("https://ecommerce.ashishgupta08.repl.co/wishlist");
         setWishlist(wishlist);
-        const { data: {cart} } = await axios.get("https://ecommerce.ashishgupta08.repl.co/cart");
+        const { data: { cart } } = await axios.get("https://ecommerce.ashishgupta08.repl.co/cart");
         setCart(cart);
         setLoader(false);
       } catch (err) {
@@ -67,9 +67,9 @@ export function Products() {
     </div>
     <Nav />
     <div className="product-page">
-        {products.productsList.map(product=>
-          <ProductCard  product={product}/>
-        )}
+        {
+          products.productsList.map( product => <ProductCard  product={product}/> )
+        }
     </div>
     </>
   );

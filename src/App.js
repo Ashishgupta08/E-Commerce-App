@@ -1,6 +1,6 @@
 import React from 'react';
-import {Home, Products, Cart, Wishlist, Profile, ProductDescription} from './Pages';
-import {Route, Routes} from 'react-router-dom';
+import { Home, Products, Cart, Wishlist, Profile, ProductDescription } from './Pages';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
@@ -16,5 +16,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

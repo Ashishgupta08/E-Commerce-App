@@ -40,7 +40,7 @@ export function ProductCard(props) {
                 <p className="card-secondary-text">{product.type}</p>
                 <h4 className="card-heading">{product.name}</h4>
                 <p className="card-primary-text">Rs. {product.price.selling}</p>
-            </div>            
+            </div>
         </div>
     )
 }

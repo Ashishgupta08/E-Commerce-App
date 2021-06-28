@@ -80,6 +80,7 @@
     position: absolute;
     left: 0;
     bottom: 10rem;
+    margin-left: 0.5rem;
 }
 
 .gender-category-card-text h2{
@@ -164,6 +165,9 @@
 @media only screen and (min-width: 768px){
     .header-bg{
         min-height: 42rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .header-text{

@@ -1,6 +1,6 @@
 import { React } from "react";
 import './assets/css/product.css';
-import {ProductCard, Nav } from '../Components/index';
+import {ProductCard, Nav } from '../Components';
 // import LoadingScreen from "react-loading-screen";
 import { useProducts } from "../Contexts";
 

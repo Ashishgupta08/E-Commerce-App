@@ -11,7 +11,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 45rem;
+    min-height: 40rem;
 }
 
 .header-text{
@@ -60,20 +60,17 @@
     min-width: 100%;
     margin-bottom: 00.5rem;
     position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .men{
     background-image: url('https://rubiktheme.com/demo/rb_azeno_demo//img/cms/img4-3.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .women{
     background-image: url('https://rubiktheme.com/demo/rb_azeno_demo//img/cms/img4-4.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .gender-category-card-text{

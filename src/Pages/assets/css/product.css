@@ -60,7 +60,7 @@
     color: var(--primary-color);
 }
 
-.card {
+.item-card {
     background-color: var(--text-color);
     border-radius: 0.25rem;
     box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
@@ -129,7 +129,6 @@
     font-size: 0.8rem;
     font-weight: 100;
     color: var(--light-color);
-    margin: 0.5rem 0 0 0;
 }
 
 .card-btn {
@@ -173,7 +172,7 @@
         justify-content: space-evenly;
     }
 
-    .card{
+    .item-card{
         margin: 0.5rem;
         max-width: 15rem;
     }

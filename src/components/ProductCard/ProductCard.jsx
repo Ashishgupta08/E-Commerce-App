@@ -1,44 +1,64 @@
 import React from 'react'
 import axios from "axios";
-import { useState } from "react";
 import { IoHeartOutline } from "react-icons/io5";
-import { useWishlist } from "../../Contexts/index";
+import { useAuth, useUser } from "../../Contexts/index";
 import { useNavigate } from "react-router-dom";
 
 export function ProductCard(props) {
 
-    const {product} = props;
+    const { product } = props;
     const navigate = useNavigate();
-    const { wishlist, setWishlist } = useWishlist();
-    const [like, setLike] = useState("heart-icon")
+    const { userState, userDispatch } = useUser();
+    const { authState } = useAuth();
+    const isWishlisted = userState.wishlist.some(item => item._id === product._id);
 
     const addToWishlist = (product) => {
-        (async function(){
+        (async function () {
             try {
-                if(wishlist.some(item => item._id === product._id)){
-                    console.log("Already in the wishlist");
-                }else {
-                    const { data: { result } } = await axios.post("https://ecommerce.ashishgupta08.repl.co/wishlist", {newWishlist: [product._id]});
-                    setWishlist(wishlist => [...wishlist, product]);
-                    setLike("heart-icon heart-fill");
+                if(authState.isUserLoggedIn){
+                    await axios.post("https://e-commerce-backend.ashishgupta08.repl.co/wishlist", { productId: product._id }, { headers: { Authorization: authState.token } });
+                    userDispatch({ type: "ADD-TO-WISHLIST", payload: product });
+                }else{
+                    console.log("Login to proceed.")
                 }
             } catch (err) {
-            console.log(err);
+                console.log(err);
             }
         })();
     };
 
+    const removeFromWishlist = (product) => {
+        (async function () {
+            try {
+                if(authState.isUserLoggedIn){
+                    await axios.delete("https://e-commerce-backend.ashishgupta08.repl.co/wishlist", { headers: { Authorization: authState.token }, data: { productId: product._id } });
+                    userDispatch({ type: "REMOVE-FROM-WISHLIST", payload: product });
+                }else{
+                    console.log("Login to proceed.")
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        })();
+    }
+
     return (
-        <div key={product._id} className="card" >
+        <div key={product._id} className="item-card" >
             <div className="card-img">
-                <img src={product.imgUrl} alt="img"/>
+                <img src={product.imgUrl} alt="img" />
                 <div className="heart-bg">
-                    <IoHeartOutline className={like} onClick={()=>{addToWishlist(product)}} />
+                    {
+                        isWishlisted
+                            ?
+                            <IoHeartOutline className="heart-icon heart-fill" onClick={() => { removeFromWishlist(product) }} />
+                            :
+                            <IoHeartOutline className="heart-icon" onClick={() => { addToWishlist(product) }} />
+                    }
                 </div>
             </div>
             <div className="card-content" onClick={() => navigate(`/view/${product._id}`)}>
-                <p className="card-secondary-text">{product.type}</p>
                 <h4 className="card-heading">{product.name}</h4>
+                <p className="card-secondary-text">{product.category}</p>
                 <p className="card-primary-text">Rs. {product.price.selling}</p>
             </div>
         </div>

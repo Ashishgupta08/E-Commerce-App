@@ -1,14 +1,42 @@
 import React from 'react'
-import {Nav} from '../components/Nav/Nav'
+import { Nav } from '../Components/Nav/Nav'
+import './assets/css/profile.css'
+import { useUser, useAuth } from '../Contexts'
+import { AiOutlineLogout } from 'react-icons/ai'
 
 export function Profile() {
+
+    const { userState: { userData } } = useUser();
+    const { logout } = useAuth();
+
     return (
         <>
-        <Nav />
-        <div style={{marginTop: "4.5rem"}}>
-            <h1>Profile Page</h1>
-            <p>This feature will be added in the next version.</p>
-        </div>
+            <Nav />
+            <div className="profile-page">
+                <div className="profile-box">
+                    <div className="profile-content">
+                        <div className="profile-card">
+                            <p className="profie-heading">Name</p>
+                            <p className="profie-data">{userData.name}</p>
+                        </div>
+                    </div>
+                    <div className="profile-content">
+                        <div className="profile-card">
+                            <p className="profie-heading">Email</p>
+                            <p className="profie-data">{userData.email}</p>
+                        </div>
+                    </div>
+                    <div className="profile-content">
+                        <div className="profile-card">
+                            <p className="profie-heading">Username</p>
+                            <p className="profie-data">{userData.username}</p>
+                        </div>
+                    </div>
+                    <div className="logout">
+                        <button onClick={() => { logout() }} ><AiOutlineLogout className="logout" />LOGOUT</button>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }

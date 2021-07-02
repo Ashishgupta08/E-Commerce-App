@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 import './assets/css/home.css'
-import { Nav } from '../components/Nav/Nav'
+import { Nav } from '../Components/Nav/Nav'
 import { AiOutlineDoubleRight } from 'react-icons/ai'
 
 export function Home() {

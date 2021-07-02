@@ -54,7 +54,7 @@
 }
 
 .close path{
-    fill: var(--off-white);
+    fill: var(--text-color);
 }
 
 .wish-card-content {

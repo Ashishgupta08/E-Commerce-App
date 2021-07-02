@@ -1,2 +1,3 @@
-export { CartProvider, useCart } from "./cart-context";
-export { WishlistProvider, useWishlist } from "./wishlist-context";
+export { AuthProvider, useAuth } from './AuthContext';
+export { ProductsProvider, useProducts } from './ProductsContext';
+export { UserProvider, useUser } from './UserContext';

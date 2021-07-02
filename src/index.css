@@ -7,6 +7,11 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 
+p{
+  margin: 0;
+  padding: 0;
+}
+
 h1{
   margin: 0;
   padding: 0;
@@ -23,8 +28,9 @@ ul{
 :root{
   --dark-color: #000;
   --primary-color: #116466;
+  --silver-color: #B9C9C9;
   --text-color: #F5F5F5;
   --light-color: #999999;
-  --off-white: #F5F5F5;
   --red-color: #FF1F2E;
+  --off-white: #F5F5F5;
 }

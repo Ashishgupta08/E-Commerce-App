@@ -1,0 +1,124 @@
+.cart-nav{
+    padding: 0.5rem 1rem;
+    margin-top: 3.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 0.5px solid var(--off-white);
+    box-shadow: 2px 0.5px 0px 0px rgb(0 0 0 / 25%);
+}
+
+.cart-nav p{
+    margin: 0;
+    padding: 0;
+}
+
+.cart-page{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+}
+
+.cart-card{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0.5rem;
+    overflow: hidden;
+    background-color: var(--text-color);
+    border-radius: 0.25rem;
+    box-shadow: 0px 1px 6px 0px rgb(0 0 0 / 25%);
+}
+
+.cart-card-img{
+    width: 40%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.cart-card-content{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 0.3rem 0.5rem;
+    justify-content: space-between;
+}
+
+.card-qty{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+    /* vertical-align: middle; */
+    margin-top: 00.25rem;
+}
+
+.brand{
+    color: var(--primary-color) !important;
+    font-weight: 400 !important;
+}
+
+.card-qty p{
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.qty-name{
+    font-size: 0.8rem;
+    font-weight: 100;
+    color: var(--light-color);
+    margin-right: 0.5rem !important;
+}
+
+.qty{
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    margin-right: 00.5rem !important;
+}
+
+.cart-icon{
+    width: 0.75rem;
+    height: auto;
+    font-weight: bold;
+    vertical-align: middle;
+    margin-right: 0.5rem !important;
+    color: #474747;
+}
+
+.cart-btn {
+    color: var(--primary-color);
+    margin: 0.5rem 0;
+    padding: 0.4rem 0.8rem;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid var(--primary-color);
+    background: transparent;
+}
+
+.cart-btn:hover{
+    color: var(--text-color);
+    background-color: var(--primary-color);
+}
+
+@media only screen and (min-width: 768px){
+    .cart-nav{
+        margin-top: 4rem;
+    }
+
+    .cart-page{
+        margin: 0 5rem;
+        padding: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .cart-card{
+        width: 48%;
+        height: auto;
+        max-height: 15rem;
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+}

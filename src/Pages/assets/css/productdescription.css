@@ -1,0 +1,91 @@
+.desc-page{
+    margin-top: 3.25rem;
+    margin-bottom: 4rem;
+}
+
+.card-desc{
+    width: 95%;
+}
+
+.desc-card{
+    display: flex;
+    flex-direction: column;
+}
+
+.desc-img{
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+}
+
+.desc-text{
+    margin: 0.5rem;
+}
+
+.desc-btn-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.desc-card-btn {
+    padding: 0.8rem;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-weight: 500;
+    margin: 0.5rem 0.15rem;
+    width: 50%;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.wishlist{
+    color: var(--dark-color);
+    background-color: transparent;
+    border: 1px solid var(--silver-color);
+}
+
+.cart{
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.desc-icon{
+    height: 1rem;
+    width: auto;
+    margin: 0 0.15rem;
+    vertical-align: bottom;
+}
+
+.marked-price{
+    margin-right: 0.5rem;
+    text-decoration: line-through;
+}
+@media only screen and (min-width: 768px){
+
+    .desc-page{
+        margin: 5rem 5rem;
+    }
+
+    .desc-card{
+        flex-direction: row;
+    }
+
+    .desc-img{
+        width: 50%;
+        min-height: 30rem;
+    }
+
+    .desc-text{
+        margin: 1rem;
+    }
+
+    .cart-card{
+        width: 48%;
+        height: auto;
+        max-height: 15rem;
+        margin: 0.5rem;
+        margin-bottom: 2rem;
+    }
+}

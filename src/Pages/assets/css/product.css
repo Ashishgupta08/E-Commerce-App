@@ -1,0 +1,213 @@
+.product-page{
+    margin-bottom: 3.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-nav{
+    top: 0;
+    position: sticky;
+    z-index: 10;
+    min-height: 2rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--off-white);
+    border-bottom: 0.5px solid var(--off-white);
+    box-shadow: 2px 0.5px 0px 0px rgb(0 0 0 / 25%);
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search{
+    padding: 0 0.5rem;
+    border: 1px solid var(--light-color);
+}
+
+.search input{
+    border: none !important;
+    border: 1px solid var(--light-color);
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    outline: transparent;
+    background-color: #F5F5F6;
+}
+
+.filters{
+    padding: 0rem 1rem;
+    margin-top: 4rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 0.5px solid var(--off-white);
+    box-shadow: 2px 0.5px 0px 0px rgb(0 0 0 / 25%);
+}
+
+.close-icon{
+    width: 1.25rem;
+    height: auto;
+    vertical-align: middle;
+    color: var(--primary-color);
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.icon{
+    width: 1.25rem;
+    height: auto;
+    vertical-align: middle;
+    color: var(--primary-color);
+}
+
+.item-card {
+    background-color: var(--text-color);
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 50%;
+    justify-content: space-between;
+}
+.card-img{
+    position: relative;
+}
+
+.card-img img{
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.heart-bg {
+    background-color: var(--off-white);
+    border-radius: 50%;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.15rem;
+}
+
+.heart-icon{
+    width: 1.5rem;
+    height: auto;
+    vertical-align: middle;
+    color: var(--light-color);
+}
+
+.heart-fill path{
+    color: var(--red-color);
+    fill: var(--red-color);
+}
+
+.card-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between !important;
+    padding: 0.5rem;
+}
+.card-content {
+    color: var(--primary-color);
+    padding: 0 0.5rem;
+    /* align-self: flex-start; */
+    /* background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%); */
+}
+
+.card-heading {
+    margin: 0 !important;
+}
+
+.card-primary-text {
+    font-size: 1rem;
+    font-weight: 100;
+    margin: 0 !important;
+}
+
+.card-secondary-text {
+    font-size: 0.8rem;
+    font-weight: 100;
+    color: var(--light-color);
+}
+
+.card-btn {
+    color: var(--primary-color);
+    margin: 0.5rem auto;
+    padding: 0.8rem;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-weight: 400;
+    display: block;
+    width: 90%;
+    cursor: pointer;
+    border: 1px solid var(--primary-color);
+    background: transparent;
+}
+
+.card-btn:hover{
+    color: var(--text-color);
+    background-color: var(--primary-color);
+}
+
+/* .card_title {
+    letter-spacing: 1px;
+    margin: 0;
+}
+.card_text {
+    font-size: 0.8rem;
+    margin: 0;
+} */
+
+@media only screen and (min-width: 768px){
+    .product-nav{
+        margin-top: 3.5rem;
+        display: none;
+    }
+
+    .product-page{
+        /* margin-top: 5rem; */
+        /* margin-left: 20rem; */
+        justify-content: space-evenly;
+    }
+
+    .item-card{
+        margin: 0.5rem;
+        max-width: 15rem;
+    }
+
+    .card-img{
+        width: max-content;
+    }
+
+    .card-img img{
+        width: auto;
+        height: 20rem;
+    }
+
+    .filters{
+        margin-top: 4rem;
+    }
+    /* .filters{
+        position: fixed;
+        left: 0;
+        top: 5rem;
+        display: block !important;
+        padding: 0.5rem;
+        background-color: transparent;
+        border-radius: 0.5rem;
+        border-right: 1px solid var(--light-color);
+        border-top: 1px solid var(--light-color);
+        color: var(--primary-color);
+        width: 20%;
+        height: 100%;
+        position: fixed;
+        z-index: 10;
+    } */
+
+    .close-icon{
+        display: none;
+    }
+
+}

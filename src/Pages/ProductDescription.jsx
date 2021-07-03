@@ -1,10 +1,9 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useUser, useAuth, useProducts } from "../Contexts";
 import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom'
-import { Nav } from '../Components/index';
-import { AiOutlineHeart, AiOutlineShopping } from "react-icons/ai";
+import { Nav } from '../Components/Nav/Nav';
 import './assets/css/productdescription.css';
 
 export function ProductDescription() {

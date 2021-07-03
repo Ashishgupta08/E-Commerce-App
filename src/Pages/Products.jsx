@@ -1,7 +1,8 @@
 import { React } from "react";
 import './assets/css/product.css';
-import { ProductCard, Nav } from '../Components';
 import { useProducts } from "../Contexts";
+import { Nav } from "../Components/Nav/Nav";
+import { ProductCard } from "../Components/ProductCard/ProductCard";
 
 export function Products() {
 

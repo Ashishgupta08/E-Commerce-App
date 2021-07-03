@@ -1,2 +1,2 @@
-export {Nav} from "./Nav/Nav";
-export {ProductCard} from "./ProductCard/ProductCard";
+export { Nav } from "./Nav/Nav";
+export { ProductCard } from "./ProductCard/ProductCard";
